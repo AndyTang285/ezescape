@@ -1,0 +1,282 @@
+
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+		box-sizing: border-box;
+   }
+
+html {
+	background-color: white;
+	font-family: pixel;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	perspective: 1px;
+	transform-style: preserve-3d;
+	overflow-x: hidden;
+}
+
+body::webkit-scrollbar {
+	width: 10px;
+}
+
+body::webkit-scrollbar-track {
+	background: black;
+}
+
+body::webkit-scrollbar-thumb {
+	background: purple;
+}
+
+
+@font-face {
+	font-family: "pixel"; 
+	src: url(fonts/Retro\ Gaming.ttf);
+}
+
+#block1, #block2 {
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	color: white;
+}
+
+#block1::before {
+	background-color: #CAD2C5;
+	content: "";
+	width: 100%;
+	height: 100%;
+	position:absolute;
+	transform: translateZ(-1px) scale(2.2);
+	background: url(images/gameboyBG1.jpg);
+	background-size:contain;
+
+	filter: blur(2px);
+}
+
+#block2 {
+	background-color: #005F73;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+h1 {
+	top: 30%;
+	left: 50%;
+	position: absolute;
+	font-size: 5vw;
+	text-shadow: 5px 5px 5px gray, 5px 5px 10px white;
+	transform: scale(1,1.1) translate(-50%, 10%);
+	
+}
+
+.title {
+	animation: slideIn 5s; 
+}
+
+@keyframes slideIn {
+	from {
+		margin-left: 100%;
+	}
+	
+	to {
+		margin-left: 0%;
+	}
+}
+
+.btn1 {
+	width: 200px;
+	height: 50px;
+	background:#001219;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	position: relative;
+	top:80vh;
+	
+}
+
+.btn1::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	border-top: 2px dotted white;
+	border-right: 2px dotted white;
+	animation: border-top-right 3s infinite alternate;
+}
+
+.btn1::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-bottom: 2px dotted white;
+	border-left: 2px dotted white;
+	animation: border-bottom-left 3s infinite alternate;
+}
+
+@keyframes border-top-right {
+	0%{width: 0px; height: 0px;}
+	50%{width: 200px; height: 0px;}
+	100%{width: 200px; height: 48px;}
+}
+
+@keyframes border-bottom-left {
+	0%{width: 0px; height: 0px;}
+	50%{width: 200px; height: 0px;}
+	100%{width: 200px; height: 48px;}
+}
+
+.btn1:hover {
+	background: #94D2BD;
+}
+
+a {
+	text-decoration: none;
+}
+
+.instructionsBlock {
+	padding-top: 100px;
+	text-align: center;
+	background-color: #AE2012;
+	color: #E9D8A6;
+	width: 100%;
+	height: 100%;
+	animation: slideIn 5s;
+}
+
+.instructionsList {
+	display: inline-block;
+	text-align: left;
+	
+}
+
+.instructionsList ol li {
+	padding-top: 20px;
+}
+
+.btn2 {
+	width: 200px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	position: relative;
+	top:100px;
+	margin: auto;
+	color: #E9D8A6;
+}
+
+.btn2::before{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	border-top: 2px dotted #E9D8A6;
+	border-right: 2px dotted #E9D8A6;
+	animation: border-top-right 3s infinite alternate;
+}
+
+.btn2::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-bottom: 2px dotted #E9D8A6;
+	border-left: 2px dotted #E9D8A6;
+	animation: border-bottom-left 3s infinite alternate;
+	
+}
+
+.btn2:hover {
+	background: #94D2BD;
+}
+
+.titleInstructions {
+	font-size: 50px;
+	text-shadow: 5px 5px 5px #EE9B00, 5px 5px 10px white;
+	padding-bottom: 20px;
+	animation: fadeIn 8s;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	
+	100% {
+		opacity: 1;
+	}
+}
+
+.level1Text {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 1em;
+	text-align: justify;
+	line-height: 1.8em;
+	padding: 0 2em;
+}
+
+#flashlight {
+	--Xpos: 50vw;
+	--Ypos: 50vh;
+}
+
+#flashlight:before {
+	content : "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	pointer-events: none;
+	background: radial-gradient(circle 9em at var(--Xpos) var(--Ypos), rgb(0,0,0,0), rgb(0,0,0,1));
+}
+
+@media screen and (max-width: 500px) {
+	body {
+		font-size: 14px;
+		
+	}
+}
+
+#congratsBlock{
+	background: url(images/vault.webp) no-repeat ;
+	background-size: cover;
+}
+
+#link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(to right,#141e30,#243b55);
+	height: 50px;
+	color: white;
+}
+
+#congrats {
+	font-size: 125px;
+}

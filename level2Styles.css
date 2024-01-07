@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: black;
+}
+
+#desk {
+    position: fixed; 
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+
+#hangman {
+    width: 200px;
+    position: fixed;
+    top: 25vh;
+    left: 75vw;
+    box-shadow: 10px 10px 50px #FF8000;
+}
+
+#hangman:hover {
+    cursor: pointer;
+    box-shadow: 10px 10px 50px red;
+}
+
+#tv {
+    position: fixed;
+    top: 20vh;
+    left: 30vh;
+    width: 500px;
+    box-shadow: 10px 10px 50px lightblue; 
+}
+
+#tv:hover{
+    box-shadow: 10px 10px 50px blue; 
+}
+
+#stickyNote {
+    width: 30px;
+    position: fixed;
+    width: 30px;
+    top: 520px;
+    left: 500px;
+}
+
+#stickyNote:active {
+    width: 300px;
+}
